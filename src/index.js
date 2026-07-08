@@ -10,6 +10,7 @@ import { registerBlockType } from '@wordpress/blocks';
  */
 import Edit from './edit';
 import metadata from './block.json';
+import { ReactComponent as Icon } from './icon.svg';
 
 /**
  * Every block starts by registering a new block type definition.
@@ -17,6 +18,8 @@ import metadata from './block.json';
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
 registerBlockType( metadata.name, {
+	...metadata,
+	icon: Icon,
 	/**
 	 * @see ./edit.js
 	 */

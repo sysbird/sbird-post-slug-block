@@ -22,8 +22,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function sbird_posts_slug_block() {
 	$build_path = __DIR__ . '/build';
-	$block_path = is_dir( $build_path ) ? $build_path : __DIR__;
+	if ( is_dir( $build_path ) ) {
+		register_block_type_from_metadata( $build_path );
+		return;
+	}
 
-	register_block_type( $block_path );
+	register_block_type_from_metadata( __DIR__ );
 }
 add_action( 'init', 'sbird_posts_slug_block' );

@@ -3,10 +3,9 @@
 	"apiVersion": 3,
 	"name": "create-block/sbird-post-slug-block",
 	"extends": "core/paragraph",
-	"version": "0.1.0",
+	"version": "1.0",
 	"title": "sBird Post Slug Block",
-	"category": "widgets",
-	"icon": "smiley",
+	"category": "block",
 	"description": "Example block scaffolded with Create Block tool.",
 	"example": {},
 	"supports": {
@@ -17,15 +16,28 @@
 			"background": true
 		},
 		"typography": {
+			"fontFamily": true,
 			"fontSize": true,
 			"lineHeight": true,
 			"letterSpacing": true,
 			"fontStyle": true,
 			"fontWeight": true,
-			"textTransform": true
+			"textTransform": true,
+			"textDecoration": true,
+			"textAlign": true,
+			"dropCap": true
 		}
 	},
-	"attributes": {},
+	"attributes": {
+		"style": {
+			"type": "object"
+		},
+		"content": {
+			"type": "string",
+			"source": "html",
+			"selector": "p"
+		}
+	},
 	"textdomain": "sbird-post-slug-block",
 	"editorScript": "file:./index.js",
 	"render": "file:./render.php",

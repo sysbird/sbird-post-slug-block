@@ -2,6 +2,7 @@ const fs = require( 'fs' );
 const path = require( 'path' );
 
 const rootDir = path.resolve( __dirname, '..' );
+const source = path.join(rootDir, 'src', 'icon.svg');
 const buildDir = path.join( rootDir, 'build' );
 
 const renameEditorCss = ( destinationDir ) => {
@@ -47,6 +48,14 @@ const replaceCssReferences = ( filePath ) => {
 	}
 };
 
+const copyIconAsset = ( destinationDir ) => {
+	const sourceIcon = path.join( rootDir, 'src', 'icon.svg' );
+	const targetIcon = path.join( destinationDir, 'icon.svg' );
+	if ( fs.existsSync( sourceIcon ) ) {
+		fs.copyFileSync( sourceIcon, targetIcon );
+	}
+};
+
 const removeRtlCss = ( destinationDir ) => {
 	if ( ! fs.existsSync( destinationDir ) ) {
 		return;
@@ -63,4 +72,5 @@ const removeRtlCss = ( destinationDir ) => {
 renameEditorCss( buildDir );
 renameStyleIndexCss( buildDir );
 replaceCssReferences( path.join( buildDir, 'block.json' ) );
+copyIconAsset( buildDir );
 removeRtlCss( buildDir );
