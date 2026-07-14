@@ -16,16 +16,28 @@
 			"background": true
 		},
 		"typography": {
-			"fontFamily": true,
 			"fontSize": true,
 			"lineHeight": true,
-			"letterSpacing": true,
-			"fontStyle": true,
-			"fontWeight": true,
-			"textTransform": true,
-			"textDecoration": true,
 			"textAlign": true,
-			"dropCap": true
+			"textColumns": true,
+			"textIndent": true,
+			"__experimentalFontFamily": true,
+			"__experimentalTextDecoration": true,
+			"__experimentalFontStyle": true,
+			"__experimentalFontWeight": true,
+			"__experimentalLetterSpacing": true,
+			"__experimentalTextTransform": true,
+			"__experimentalWritingMode": true,
+			"fitText": true,
+			"__experimentalDefaultControls": {
+				"fontSize": true
+			}
+		}
+	},
+	"selectors": {
+		"root": "p",
+		"typography": {
+			"textIndent": ".wp-block-paragraph + .wp-block-paragraph"
 		}
 	},
 	"attributes": {
@@ -40,6 +52,7 @@
 	},
 	"textdomain": "sbird-post-slug-block",
 	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css",
 	"render": "file:./render.php",
 	"viewScript": "file:./view.js"
 }

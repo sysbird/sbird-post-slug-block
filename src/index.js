@@ -11,6 +11,7 @@ import { registerBlockType } from '@wordpress/blocks';
 import Edit from './edit';
 import metadata from './block.json';
 import { ReactComponent as Icon } from './icon.svg';
+import './style.scss';
 
 /**
  * Every block starts by registering a new block type definition.
