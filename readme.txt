@@ -1,25 +1,24 @@
 === sBird Post Slug Block ===
 Contributors:      sysbird
-Plugin URI:		https://wordpress.org/plugins//
+Plugin URI:			https://wordpress.org/plugins//
 Tags:              block
 Tested up to:      6.9
 Stable tag:        1.3
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
-A custom block that displays the slug of posts.
-This plugin was previously a widget, but has now been converted to a block.
+A block for the Site Editor that displays post and archive slugs.
 
 == Description ==
-The block that shows post slug.
+This block is designed for use in templates in the Site Editor. It displays the current post's slug on single posts and pages. On archive pages, it displays the slug of the current category or custom post type.
+It extends the core Paragraph block, so you can use the same styling options available to Paragraph blocks.
 
 * [GitHub](https://github.com/sysbird/sbird-post-slug-block)
-* [Description in Japanese](https://sysbird.jp/sbird-post-slug-block/)
 
 
 = Usage =
-1. Add the "sBird Post Slug Block" for your Block Editor.
-2. You can change the title and posts unit at settings.
+1. Add the "sBird Post Slug Block" to a template in the Site Editor.
+2. As with the Paragraph block, you can customize the text color, background color, font size, and typography.
 
 
 == Installation ==
@@ -28,7 +27,7 @@ The block that shows post slug.
 
 
 == Screenshots ==
-1. Display Block at Block Editor.
+1. Display the block in the Site Editor.
 
 
 == Changelog ==

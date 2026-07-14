@@ -1,7 +1,7 @@
 {
 	"name": "sbird-post-slug-block",
 	"version": "0.1.0",
-	"description": "Example block scaffolded with Create Block tool.",
+	"description": "A block for the Site Editor that displays post and archive slugs.",
 	"author": "The WordPress Contributors",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
@@ -18,8 +18,7 @@
 	},
 	"dependencies": {
 		"@wordpress/block-editor": "latest",
-		"@wordpress/blocks": "latest",
-		"@wordpress/i18n": "latest"
+		"@wordpress/blocks": "latest"
 	},
 	"devDependencies": {
 		"@wordpress/scripts": "^31.2.0"

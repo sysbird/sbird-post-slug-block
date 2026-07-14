@@ -6,7 +6,7 @@
   "version": "1.0",
   "title": "sBird Post Slug Block",
   "category": "block",
-  "description": "Example block scaffolded with Create Block tool.",
+  "description": "Displays post, category, and custom post type slugs in Site Editor templates.",
   "example": {},
   "supports": {
     "html": false,
@@ -53,6 +53,5 @@
   "textdomain": "sbird-post-slug-block",
   "editorScript": "file:./index.js",
   "style": "file:./style.css",
-  "render": "file:./render.php",
-  "viewScript": "file:./view.js"
+  "render": "file:./render.php"
 }

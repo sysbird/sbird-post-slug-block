@@ -2,7 +2,6 @@ const fs = require( 'fs' );
 const path = require( 'path' );
 
 const rootDir = path.resolve( __dirname, '..' );
-const source = path.join(rootDir, 'src', 'icon.svg');
 const buildDir = path.join( rootDir, 'build' );
 
 const renameEditorCss = ( destinationDir ) => {
