@@ -34,6 +34,7 @@
 			$slug = mb_convert_encoding( $slug, 'UTF-8', 'EUC-JP' );
 		}
 	}
+	$slug = str_replace( '-', ' ', $slug );
 	echo esc_html( $slug );
 	?>
 </p>

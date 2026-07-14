@@ -28,9 +28,9 @@ export default function Edit( { attributes } ) {
 		}
 		const raw = ( editor.getEditedPostAttribute && editor.getEditedPostAttribute( 'slug' ) ) || '';
 		try {
-			return decodeURIComponent( raw );
+			return decodeURIComponent( raw ).replace( /-/g, ' ' );
 		} catch ( e ) {
-			return raw;
+			return raw.replace( /-/g, ' ' );
 		}
 	}, [] );
 
