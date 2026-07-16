@@ -6,7 +6,7 @@
   "version": "1.0",
   "title": "sBird Post Slug Block",
   "category": "block",
-  "description": "Displays post, category, and custom post type slugs in Site Editor templates.",
+  "description": "This block displays the slugs for posts, categories, and custom post types.",
   "example": {},
   "supports": {
     "html": false,

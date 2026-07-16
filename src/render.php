@@ -9,8 +9,12 @@
  *
  * @see https://github.com/WordPress/gutenberg/blob/trunk/docs/reference-guides/block-api/block-metadata.md#render
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 ?>
-<p <?php echo get_block_wrapper_attributes( array( 'class' => 'sbird-post-slug-block' ) ); ?>>
+<p <?php echo wp_kses_data( get_block_wrapper_attributes( array( 'class' => 'sbird-post-slug-block' ) ) ); ?>>
 	<?php
 	$post = get_post();
 	$slug = '';
