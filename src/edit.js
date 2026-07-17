@@ -14,7 +14,7 @@ import { useSelect } from '@wordpress/data';
  *
  * @return {Element} Element to render.
  */
-export default function Edit( { attributes } ) {
+export default function Edit() {
 	const previewSlug = useSelect( ( select ) => {
 		const editor = select( 'core/editor' );
 		if ( ! editor ) {
@@ -30,7 +30,6 @@ export default function Edit( { attributes } ) {
 
 	const blockProps = useBlockProps( {
 		className: 'sbird-post-slug-block',
-		style: attributes?.style,
 	} );
 
 	return <p { ...blockProps }>{ previewSlug || '' }</p>;

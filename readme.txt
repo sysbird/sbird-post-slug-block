@@ -4,7 +4,7 @@ Plugin URI:			https://wordpress.org/plugins/sbird-post-slug-block/
 Tags:				block, slug, site-editor
 Requires at least:	6.9
 Tested up to:		7.0
-Stable tag:			1.0
+Stable tag:			1.1
 License:			GPL-2.0-or-later
 License URI:		https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +13,7 @@ This is a block for the Site Editor that displays the slugs of posts, categories
 == Description ==
 This block is designed for use in templates in the Site Editor. It displays the current post's slug on single posts and pages. On archive pages, it displays the slug of the current category or custom post type.
 Hyphens in slugs are displayed as spaces.
-You can use the displayed slug as supporting text for headings or as a design accent.
+You can use the displayed slug as supporting text for the page title or as a design accent.
 It extends the core Paragraph block, so you can use the same styling options available to Paragraph blocks.
 
 * [GitHub](https://github.com/sysbird/sbird-post-slug-block)
@@ -26,8 +26,9 @@ It extends the core Paragraph block, so you can use the same styling options ava
 
 
 == Installation ==
-1. Upload the entire "sBird Post Slug Block" folder to the /wp-content/plugins/ directory.
+1. Upload the plugin files to the /wp-content/plugins/sbird-post-slug-block directory, or install the plugin through the WordPress plugins screen directly. 
 2. Activate the plugin through the ‘Plugins’ menu in WordPress.
+3. Use the site editor to add “sBird Post Slug Block” to your template.
 
 
 == Screenshots ==
@@ -37,6 +38,9 @@ It extends the core Paragraph block, so you can use the same styling options ava
 
 
 == Changelog ==
+
+= 1.1 =
+* Added margin and padding controls.
 
 = 1.0 =
 * Hello, world!

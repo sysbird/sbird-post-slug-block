@@ -2,8 +2,8 @@
 /**
  * Plugin Name:			sBird Post Slug Block
  * Plugin URI:			https://wordpress.org/plugins/sbird-post-slug-block/
- * Description:			A block for the Site Editor that displays post and archive slugs.
- * Version:				1.0
+ * Description:			This is a block for the Site Editor that displays the slugs of posts, categories, and custom post types.
+ * Version:				1.1
  * Requires at least:	6.9
  * Requires PHP:		7.4
  * Author:				sysbird

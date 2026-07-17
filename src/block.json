@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "create-block/sbird-post-slug-block",
+	"name": "sysbird/sbird-post-slug-block",
 	"extends": "core/paragraph",
-	"version": "1.0",
+	"version": "1.1",
 	"title": "sBird Post Slug Block",
 	"category": "block",
-	"description": "This block displays the slugs for posts, categories, and custom post types.",
+	"description": "This is a block for the Site Editor that displays the slugs of posts, categories, and custom post types.",
 	"example": {},
 	"supports": {
 		"html": false,
@@ -14,6 +14,14 @@
 		"color": {
 			"text": true,
 			"background": true
+		},
+		"spacing": {
+			"margin": true,
+			"padding": true,
+			"__experimentalDefaultControls": {
+				"margin": false,
+				"padding": false
+			}
 		},
 		"typography": {
 			"fontSize": true,
