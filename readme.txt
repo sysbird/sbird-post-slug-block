@@ -40,7 +40,7 @@ It extends the core Paragraph block, so you can use the same styling options ava
 == Changelog ==
 
 = 1.1.1 =
-* Improved build and watch asset handling.
+* Added nowrap styling.
 
 = 1.1 =
 * Added margin and padding controls.
