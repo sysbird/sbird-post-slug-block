@@ -3,7 +3,7 @@
   "apiVersion": 3,
   "name": "sysbird/sbird-post-slug-block",
   "extends": "core/paragraph",
-  "version": "1.1",
+  "version": "1.1.1",
   "title": "sBird Post Slug Block",
   "category": "block",
   "description": "This is a block for the Site Editor that displays the slugs of posts, categories, and custom post types.",
