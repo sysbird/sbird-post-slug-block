@@ -25,7 +25,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 	} elseif ( $queried_object instanceof WP_Term && 'category' === $queried_object->taxonomy ) {
 		$slug = (string) $queried_object->slug;
 	} elseif ( $post ) {
-		$slug = (string) $post->post_name;
+		if ( 'category' === ( $attributes['slugSource'] ?? 'post' ) ) {
+			$categories = get_the_category( $post->ID );
+			if ( ! empty( $categories ) ) {
+				$slug = (string) $categories[0]->slug;
+			}
+		}
+
+		if ( '' === $slug ) {
+			$slug = (string) $post->post_name;
+		}
 	}
 
 	// Decode percent-encoded slugs and attempt common Japanese encodings if needed.

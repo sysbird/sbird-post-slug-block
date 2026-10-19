@@ -3,8 +3,10 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
+import { PanelBody, RadioControl } from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
+import { __ } from '@wordpress/i18n';
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -14,23 +16,61 @@ import { useSelect } from '@wordpress/data';
  *
  * @return {Element} Element to render.
  */
-export default function Edit() {
-	const previewSlug = useSelect( ( select ) => {
+export default function Edit( { attributes, setAttributes } ) {
+	const slugSource = attributes.slugSource || 'post';
+	const { previewSlug, isSingleTemplate } = useSelect( ( select ) => {
 		const editor = select( 'core/editor' );
 		if ( ! editor ) {
-			return '';
+			return { previewSlug: '', isSingleTemplate: false };
 		}
 		const raw = ( editor.getEditedPostAttribute && editor.getEditedPostAttribute( 'slug' ) ) || '';
+		const postType = editor.getCurrentPostType ? editor.getCurrentPostType() : '';
+		const templateSlug = raw.split( '//' ).pop();
+		const isSingle =
+			'wp_template' === postType &&
+			( 'single' === templateSlug || templateSlug.startsWith( 'single-' ) );
+		let decodedSlug = raw;
+
 		try {
-			return decodeURIComponent( raw ).replace( /-/g, ' ' );
+			decodedSlug = decodeURIComponent( raw );
 		} catch ( e ) {
-			return raw.replace( /-/g, ' ' );
+			// Keep the original slug if it cannot be decoded.
 		}
+
+		return {
+			previewSlug: decodedSlug.replace( /-/g, ' ' ),
+			isSingleTemplate: isSingle,
+		};
 	}, [] );
 
 	const blockProps = useBlockProps( {
 		className: 'sbird-post-slug-block',
 	} );
 
-	return <p { ...blockProps }>{ previewSlug || '' }</p>;
+	return (
+		<>
+			{ isSingleTemplate && (
+				<InspectorControls>
+					<PanelBody title={ __( 'Slug settings', 'sbird-post-slug-block' ) }>
+						<RadioControl
+							label={ __( 'Display slug', 'sbird-post-slug-block' ) }
+							selected={ slugSource }
+							options={ [
+								{
+									label: __( 'Post slug', 'sbird-post-slug-block' ),
+									value: 'post',
+								},
+								{
+									label: __( 'First category slug', 'sbird-post-slug-block' ),
+									value: 'category',
+								},
+							] }
+							onChange={ ( value ) => setAttributes( { slugSource: value } ) }
+						/>
+					</PanelBody>
+				</InspectorControls>
+			) }
+			<p { ...blockProps }>{ previewSlug || '' }</p>
+		</>
+	);
 }
